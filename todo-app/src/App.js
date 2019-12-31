@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from "reactstrap"
+
+import shortid from "shortid"
 
 import Input from "./components/Input"
 import TodoList from "./components/TodoList"
@@ -7,24 +10,24 @@ import './App.css';
 
 class App extends Component {
   state = {
-    taskList: [
-      { id: 1, todo: "Something 1", completed: true },
-      { id: 2, todo: "Something 2", completed: false }
+    todoList: [
+      { id: "23TplPdS", todo: "Something 1", completed: true },
+      { id: "2WEKaVNO", todo: "Something 2", completed: false }
     ]
   }
 
   _handleAddTodo = todo => {
     const newList = [
-      ...this.state.taskList,
-      { id: this.state.taskList.length + 1, todo, completed: false }
+      ...this.state.todoList,
+      { id: shortid.generate(), todo, completed: false }
     ];
-    this.setState({ taskList: newList });
+    this.setState({ todoList: newList });
   };
 
-  // _handleDelete = todo => () => {
-  //   const newList = this.state.list.filter(item => item.id !== todo.id);
-  //   this.setState({ list: newList });
-  // };
+  _handleDelete = todo => () => {
+    const newList = this.state.todoList.filter(item => item.id !== todo.id);
+    this.setState({ todoList: newList });
+  };
 
   // _handleCheck = id => () => {
   //   const newList = this.state.list.map(todo =>
@@ -34,13 +37,21 @@ class App extends Component {
   // };
 
   render() {
-    const { taskList } = this.state;
+    const { todoList } = this.state;
     return (
-      <div className="App">
-        <h1>Todo App</h1>
-        <Input onAdd={this._handleAddTodo}/>
-        <TodoList taskList={taskList}/>
-      </div>
+      <Container className="App">
+        <Row>
+          <Col sm={12} className="text-center">
+            <h1>Todo App</h1>
+            <Input
+              onAdd={this._handleAddTodo}/>
+            <TodoList 
+              todoList={todoList}
+              onDel={this._handleDelete}
+            />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

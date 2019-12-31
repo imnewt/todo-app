@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import "./Input.css"
+
 export default class Input extends Component {
     state = {
         inputValue: ""
@@ -20,9 +22,11 @@ export default class Input extends Component {
     render() {
         const { inputValue } = this.state;
         return (
-            <form onSubmit={this._handleSubmit}>
+            <form onSubmit={this._handleSubmit} className="pt-5">
                 <input 
                     type="text"
+                    placeholder="Add new task here"
+                    className="input-bar"
                     value={inputValue}
                     onChange={this._handleChange}
                 />

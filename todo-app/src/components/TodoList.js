@@ -1,4 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
+import { Button } from "reactstrap"
+
+import "./TodoList.css"
 
 export default class TodoList extends Component {
     state = {
@@ -6,12 +9,12 @@ export default class TodoList extends Component {
     }
 
     render() {
-        const { taskList } = this.props;
+        const { todoList, onDel } = this.props;
         return (
-            <div>
-                {
-                    taskList.map(task => <Todo value={task}/>)
-                }
+            <div className="todo-list mt-4">
+            {
+                todoList.map(todo => <Todo value={todo} onDel={onDel}/>)
+            }
             </div>
         )
     }
@@ -19,10 +22,12 @@ export default class TodoList extends Component {
 
 class Todo extends Component {
     render() {
-        const { value } = this.props;
+        const { value, onDel } = this.props;
         return (
-            <div>
+            <div className="todo">
+                <input type="checkbox"/>
                 {value.todo}
+                <Button onClick={onDel(value)}>x</Button>
             </div>
         )
     }
