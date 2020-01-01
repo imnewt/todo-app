@@ -29,12 +29,13 @@ class App extends Component {
     this.setState({ todoList: newList });
   };
 
-  // _handleCheck = id => () => {
-  //   const newList = this.state.list.map(todo =>
-  //     todo.id === id ? (todo.completed = !todo.completed) : todo
-  //   );
-  //   this.setState({ list: newList });
-  // };
+  // Not finished yet
+  _handleCheck = id => () => {
+    const newList = this.state.todoList.map(todo =>
+      todo.id === id ? (todo.completed = !todo.completed) : todo
+    );
+    this.setState({ todoList: newList });
+  };
 
   render() {
     const { todoList } = this.state;
