@@ -25,7 +25,7 @@ export default class Input extends Component {
             <form onSubmit={this._handleSubmit} className="pt-5">
                 <input 
                     type="text"
-                    placeholder="Add new task here"
+                    placeholder="Add your new tasks here"
                     className="input-bar"
                     value={inputValue}
                     onChange={this._handleChange}

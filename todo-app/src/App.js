@@ -41,7 +41,7 @@ class App extends Component {
     const { todoList } = this.state;
     return (
       <Container className="App">
-        <Row>
+        <Row className="main-container">
           <Col sm={12} className="text-center">
             <h1>Todo App</h1>
             <Input
