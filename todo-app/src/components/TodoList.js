@@ -32,19 +32,18 @@ class Todo extends Component {
             //     <Button color="danger" onClick={onDel(value)}>Delete</Button>
             // </div>
             <Container>
-                <Row className="atodo">
-                    <div className="col-8 text-left">
+                <Row className="atodo align-items-center">
+                    <div className="col-9 col-sm-10 text-left p-0">
                         <label className="todo">{value.todo}
                             <input type="checkbox"/>
                             <span className="checkmark"></span>
                         </label>
                     </div>
-                    <div className="col-4 text-right">
+                    <div className="col-3 col-sm-2 text-right p-0">
                         <Button className="del-btn" color="danger" onClick={onDel(value)}>Delete</Button>
                     </div>
                 </Row>
             </Container>
-            
         )
     }
 }

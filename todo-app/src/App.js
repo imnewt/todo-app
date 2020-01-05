@@ -12,7 +12,8 @@ class App extends Component {
   state = {
     todoList: [
       { id: "23TplPdS", todo: "Something 1", completed: true },
-      { id: "2WEKaVNO", todo: "Something 2", completed: false }
+      { id: "2WEKaVNO", todo: "Something 2", completed: false },
+      { id: "2WEaaVNO", todo: "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", completed: false }
     ]
   }
 
@@ -42,7 +43,7 @@ class App extends Component {
     return (
       <Container className="App">
         <Row className="main-container">
-          <Col sm={12} className="text-center">
+          <Col xs={12} className="text-center">
             <h1>Todo App</h1>
             <Input
               onAdd={this._handleAddTodo}/>

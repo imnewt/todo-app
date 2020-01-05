@@ -3,11 +3,8 @@ body {
 }
 
 .App {
-  --background-color: #fff;
 }
 
 .main-container {
   background-color: #fff;
-  --margin-left: 8rem;
-  --margin-right: 8rem;
 }

@@ -2,7 +2,7 @@
 }
 
 .atodo {
-    padding: .5rem;
+    padding: .5rem 1rem;
     margin-bottom: 1rem;
     font-size: 1.5rem;
     box-shadow: 2px 2px 3px 3px #ccc;
@@ -14,12 +14,17 @@
     padding-left: 35px;
     margin-bottom: 0;
     cursor: pointer;
+    word-break: break-all;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
   
+/* .test {
+    flex-grow: 1;
+} */
+
 /* Hide the browser's default checkbox */
 .todo input {
     position: absolute;
