@@ -9,11 +9,11 @@ export default class TodoList extends Component {
     }
 
     render() {
-        const { todoList, onDel } = this.props;
+        const { todoList, onDel, onCheck } = this.props;
         return (
             <div className="todo-list mt-4">
             {
-                todoList.map(todo => <Todo value={todo} onDel={onDel}/>)
+                todoList.map(todo => <Todo value={todo} onDel={onDel} onCheck={onCheck}/>)
             }
             </div>
         )
@@ -22,7 +22,7 @@ export default class TodoList extends Component {
 
 class Todo extends Component {
     render() {
-        const { value, onDel } = this.props;
+        const { value, onDel, onCheck } = this.props;
         return (
             // <div className="atodo d-flex">
             //     <div className="todo-container d-flex align-items-center">

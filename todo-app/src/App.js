@@ -50,6 +50,7 @@ class App extends Component {
             <TodoList 
               todoList={todoList}
               onDel={this._handleDelete}
+              onCheck={this._handleCheck}
             />
           </Col>
         </Row>
