@@ -11,9 +11,8 @@ import './App.css';
 class App extends Component {
   state = {
     todoList: [
-      { id: "23TplPdS", todo: "Something 1", completed: true },
-      { id: "2WEKaVNO", todo: "Something 2", completed: false },
-      { id: "2WEaaVNO", todo: "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", completed: false }
+      { id: "23TplPdS", todo: "Something 1", isComplete: true },
+      { id: "2WEKaVNO", todo: "Something 2", isComplete: false }
     ]
   }
 
@@ -30,13 +29,31 @@ class App extends Component {
     this.setState({ todoList: newList });
   };
 
-  // Not finished yet
-  _handleCheck = id => () => {
-    const newList = this.state.todoList.map(todo =>
-      todo.id === id ? (todo.completed = !todo.completed) : todo
-    );
-    this.setState({ todoList: newList });
-  };
+  // _handleCheck = todo => () => {
+  //   const newList = this.state.todoList.map(item =>
+  //     item.id === todo.id ? (item.isComplete = !item.isComplete) : item
+  //   );
+  //   this.setState({ todoList: newList });
+  //   console.log('seucc')
+  // };
+
+  _handleCheck = (todo) => () => {
+      const isComplete = todo.isComplete;
+      const {todoList: test} = this.state;
+      const index = test.indexOf(todo);
+      this.setState({
+        todoList: [
+          ...test.slice(0,index),
+          {
+            ...todo,
+            isComplete: !isComplete
+          },
+          ...test.slice(index+1)
+        ]
+      })
+      console.log(this.state.todoList)
+    
+  }
 
   render() {
     const { todoList } = this.state;

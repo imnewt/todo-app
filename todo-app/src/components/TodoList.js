@@ -23,6 +23,10 @@ export default class TodoList extends Component {
 class Todo extends Component {
     render() {
         const { value, onDel, onCheck } = this.props;
+        let test = 'todo';
+        if (value.isComplete) {
+            test += " test"
+        }
         return (
             // <div className="atodo d-flex">
             //     <div className="todo-container d-flex align-items-center">
@@ -34,7 +38,7 @@ class Todo extends Component {
             <Container>
                 <Row className="atodo align-items-center">
                     <div className="col-9 col-sm-10 text-left p-0">
-                        <label className="todo">{value.todo}
+                        <label className={test} onClick={onCheck(value)}>{value.todo}
                             <input type="checkbox"/>
                             <span className="checkmark"></span>
                         </label>

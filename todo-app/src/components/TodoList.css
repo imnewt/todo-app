@@ -1,6 +1,11 @@
 .todo-list {
 }
 
+.test {
+    text-decoration: line-through;
+    opacity: .3;
+}
+
 .atodo {
     padding: .5rem 1rem;
     margin-bottom: 1rem;
